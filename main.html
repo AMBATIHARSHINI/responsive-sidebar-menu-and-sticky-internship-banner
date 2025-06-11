@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MITS Internship Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glow:hover {
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 24px #00f6ff;
+    }
+    .nav-link:hover {
+      transform: scale(1.05);
+    }
+    .sticky-banner {
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 50;
+    }
+    .transition-all {
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-tr from-purple-100 to-blue-50 font-sans text-gray-800">
+
+
+  <div class="sticky-banner bg-gradient-to-r from-yellow-400 to-pink-500 p-3 px-5 flex items-center justify-between text-white shadow-lg z-50">
+    <div class="flex items-center gap-2 font-bold text-lg">
+      🌟 <a href="#apply" class="hover:underline">Apply for Internship</a>
+    </div>
+    <span class="text-sm font-medium hidden sm:inline">Your future starts here!</span>
+  </div>
+
+  <div class="flex">
+
+    
+    <aside id="sidebar" class="fixed top-0 left-0 h-full w-64 pt-16 bg-gradient-to-b from-blue-900 to-indigo-800 text-white transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-40 shadow-2xl">
+      
+      
+      <div class="p-5 pt-6 text-3xl font-extrabold text-center text-yellow-400 tracking-wide border-b border-indigo-500 shadow-sm z-50 relative">
+        🌐 MITS
+        <div class="text-xs text-gray-200 mt-1 font-light">Micro Info Tech Services</div>
+      </div>
+      
+      
+      <nav class="flex flex-col p-6 space-y-4">
+        <a href="#apply" class="nav-link transition-all p-3 rounded-lg bg-indigo-700 hover:bg-pink-600 glow">🎯 Internship Application</a>
+        <a href="#offer" class="nav-link transition-all p-3 rounded-lg bg-indigo-700 hover:bg-green-600 glow">📄 Offer Letter</a>
+        <a href="#verify" class="nav-link transition-all p-3 rounded-lg bg-indigo-700 hover:bg-yellow-500 glow">✅ Certificate Verification</a>
+        <a href="#join" class="nav-link transition-all p-3 rounded-lg bg-indigo-700 hover:bg-purple-500 glow">🤝 Join Our Team</a>
+        <a href="#contact" class="nav-link transition-all p-3 rounded-lg bg-indigo-700 hover:bg-red-500 glow">📬 Contact Us</a>
+      </nav>
+    </aside>
+
+  
+    <button id="hamburger" aria-label="Toggle menu"
+            class="fixed top-4 left-4 z-50 p-2 bg-gradient-to-br from-pink-400 to-yellow-400 rounded-full shadow-md md:hidden focus:outline-none">
+      <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
+    <main class="flex-1 ml-0 md:ml-64 p-8 space-y-16">
+      <section id="apply" class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all">
+        <h2 class="text-2xl font-bold mb-3 text-indigo-700">🎯 Internship Application</h2>
+        <p>Apply for your dream internship with our simple form!</p>
+      </section>
+
+      <section id="offer" class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all">
+        <h2 class="text-2xl font-bold mb-3 text-green-600">📄 Offer Letter Generation</h2>
+        <p>Generate and download your personalized internship offer letter.</p>
+      </section>
+
+      <section id="verify" class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all">
+        <h2 class="text-2xl font-bold mb-3 text-yellow-600">✅ Certificate Verification</h2>
+        <p>Verify your internship completion certificate with ease.</p>
+      </section>
+
+      <section id="join" class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all">
+        <h2 class="text-2xl font-bold mb-3 text-purple-600">🤝 Join Our Team</h2>
+        <p>Fill out the form to join one of our dynamic project teams.</p>
+      </section>
+
+      <section id="contact" class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all">
+        <h2 class="text-2xl font-bold mb-3 text-red-600">📬 Contact Info</h2>
+        <p>📧 Email: <a href="mailto:info@example.com" class="underline text-blue-600">info@example.com</a></p>
+        <p>📞 Phone: +91-98765-43210</p>
+      </section>
+    </main>
+  </div>
+
+  
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+        sidebar.classList.add('-translate-x-full');
+      }
+    });
+  </script>
+</body>
+</html>
